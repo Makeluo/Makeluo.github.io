@@ -6,12 +6,12 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://Makeluo.com">
-  <title>Hexo-TestDemo</title>
+  <title>Archives: 2017/10 | Hexo-TestDemo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="个人网站，博客，简介">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo-TestDemo">
-<meta property="og:url" content="http://Makeluo.com/index.html">
+<meta property="og:url" content="http://Makeluo.com/archives/2017/10/index.html">
 <meta property="og:site_name" content="Hexo-TestDemo">
 <meta property="og:description" content="个人网站，博客，简介">
 <meta property="og:locale" content="Eenglish,简体中文">
@@ -159,306 +159,47 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-node-one" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/01/node-one/">node-one</a>
-    </h1>
-  
-
-        
-        <a href="/2017/10/01/node-one/" class="archive-article-date">
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/10/01/node-one/" class="archive-article-date">
   	<time datetime="2017-10-01T12:05:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-01</time>
 </a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="1-Vue-js是什么"><a href="#1-Vue-js是什么" class="headerlink" title="1. Vue.js是什么?"></a>1. Vue.js是什么?</h1><pre><code>一位华裔前Google工程师开发的前端js库
-一个MVVM框架
-核心概念
-  数据绑定
-  组件
-借鉴angular的模板和数据绑定技术
-借鉴react的组件化和虚拟DOM技术
-体积下, 运行效率高, 编码简洁, PC/移动端开发都合适
-它本身只关注UI, 可以轻松引入vue插件和其它第三库开发项目
-</code></pre><h1 id="2-基本使用"><a href="#2-基本使用" class="headerlink" title="2. 基本使用"></a>2. 基本使用</h1><pre><code>引入vue.js
-创建Vue对象(vm), 指定选项(配置)对象
-    el : 指定dom标签容器的选择器
-    data : 指定初始化状态属性数据的对象函数(返回一个对象)
-页面中
-    使用v-model: 实现双向数据绑定
-    使用{{}}: 显示数据
-</code></pre><h1 id="3-Vue对象的选项"><a href="#3-Vue对象的选项" class="headerlink" title="3. Vue对象的选项"></a>3. Vue对象的选项</h1><h2 id="el"><a href="#el" class="headerlink" title="el"></a>el</h2><pre><code>指定dom标签容器的选择器
-Vue就会管理对应的标签及其子标签
-</code></pre><h2 id="data"><a href="#data" class="headerlink" title="data"></a>data</h2><pre><code>对象或函数类型
-指定初始化状态属性数据的对象
-vue对象可以直接访问其属性
-页面中可以直接访问使用
-数据代理: 由vm对象来代理对data中所有属性的操作(读/写)
-</code></pre><h2 id="methods"><a href="#methods" class="headerlink" title="methods"></a>methods</h2><pre><code>包含多个方法的对象
-供页面中的事件指令来绑定回调
-回调函数默认有event参数, 但也可以指定自己的参数
-所有的方法由vue对象来调用, 访问data中的属性直接使用this.xxx
-</code></pre><h2 id="computed"><a href="#computed" class="headerlink" title="computed"></a>computed</h2><pre><code>包含多个方法的对象
-对状态属性进行计算返回一个新的数据, 供页面获取显示
-一般情况下是相当于是一个只读的属性
-利用set/get方法来实现属性数据的计算读取, 同时监视属性数据的变化
-如何给对象定义get/set属性
-    在创建对象时指定: get name () {return xxx} / set name (value) {}
-      对象创建之后指定: Object.defineProperty(obj, age, {get(){}, set(value){}})
-</code></pre><h2 id="watch"><a href="#watch" class="headerlink" title="watch"></a>watch</h2><pre><code>Vue.$watch()
-包含多个属性监视的对象
-分为一般监视和深度监视
-    &apos;xxx&apos; : {
-        deep : true,
-        handler : fun(value)
-    }
-</code></pre><h1 id="4-过渡动画"><a href="#4-过渡动画" class="headerlink" title="4. 过渡动画"></a>4. 过渡动画</h1><pre><code>利用vue去操控css的transition/animation动画
-模板: 使用&lt;transition name=&apos;xxx&apos;&gt;包含带动画的标签
-css样式
-    .fade-enter-active: 进入过程, 指定进入的transition
-    .fade-leave-active: 离开过程, 指定离开的transition
-    .xxx-enter, .xxx-leave-to: 指定隐藏的样式
-编码例子
-    .xxx-enter-active, .xxx-leave-active {
-      transition: opacity .5s
-    }
-    .xxx-enter, .xxx-leave-to {
-      opacity: 0
-    }
-
-    &lt;transition name=&quot;xxx&quot;&gt;
-      &lt;p v-if=&quot;show&quot;&gt;hello&lt;/p&gt;
-    &lt;/transition&gt;
-</code></pre><h1 id="5-生命周期"><a href="#5-生命周期" class="headerlink" title="5. 生命周期"></a>5. 生命周期</h1><pre><code>vm/组件对象
-生命周期图
-主要的生命周期函数(钩子)
-    created(): 启动异步任务(发送ajax请求, 启动定时器)
-    beforeDestroy(): 做一些收尾的工作
-</code></pre><h1 id="6-页面指令"><a href="#6-页面指令" class="headerlink" title="6. 页面指令"></a>6. 页面指令</h1><pre><code>v-text/v-html: 指定标签体
-v-text : 当作纯文本
-    * v-html : 将value作为html标签来解析
-v-if v-else v-show
-    * v-if : 如果vlaue为true, 当前标签会输出在页面中
-    * v-else : 与v-if一起使用, 如果value为false, 将当前标签输出到页面中
-    * v-show: 就会在标签中添加display样式, 如果vlaue为true, display=block, 否则是none
-v-for : 遍历
-    * 遍历数组 : v-for=&quot;(person, index) in persons&quot;   
-    * 遍历对象 : v-for=&quot;value in person&quot;   $key
-v-on : 绑定事件监听
-    * v-on:事件名, 可以缩写为: @事件名
-    * 监视具体的按键: @keyup.keyCode   @keyup.enter
-    * 停止事件的冒泡和阻止事件默认行为: @click.stop   @click.prevent
-    * 隐含对象: $event
-v-bind : 强制绑定解析表达式  
-    * 很多属性值是不支持表达式的, 就可以使用v-bind
-    * 可以缩写为:  :id=&apos;name&apos;
-    * :class
-      * :class=&quot;a&quot;
-        * :class=&quot;{classA : isA, classB : isB}&quot;
-        * :class=&quot;[classA, classB]&quot;
-    * :style
-        :style=&quot;{color : color}&quot;
-v-model
-    * 双向数据绑定
-ref : 标识某个标签
-    * ref=&apos;xxx&apos;
-    * 读取得到标签对象: this.$refs.xxx
-</code></pre><h1 id="7-自定义指令"><a href="#7-自定义指令" class="headerlink" title="7. 自定义指令"></a>7. 自定义指令</h1><h2 id="注册全局指令"><a href="#注册全局指令" class="headerlink" title="注册全局指令"></a>注册全局指令</h2><pre><code>Vue.directive(&apos;my-directive&apos;, function(el, binding){
-  el.innerHTML = binding.value.toUpperCase()
-})
-</code></pre><h2 id="注册局部指令"><a href="#注册局部指令" class="headerlink" title="注册局部指令"></a>注册局部指令</h2><pre><code>directives : {
-  &apos;my-directive&apos; : {
-    bind: function(el, binding) {
-      el.innerHTML = binding.value.toUpperCase()
-    }
-  }
-}
-</code></pre><h2 id="使用指令"><a href="#使用指令" class="headerlink" title="使用指令:"></a>使用指令:</h2><pre><code>v-my-directive=&apos;xxx&apos;
-</code></pre>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/01/node-one/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-test1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+    	 
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/25/test1/">test1</a>
+      <a class="archive-article-title" href="/2017/10/01/node-one/">node-one</a>
     </h1>
   
 
-        
-        <a href="/2017/09/25/test1/" class="archive-article-date">
-  	<time datetime="2017-09-25T13:13:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Hello ， 欢迎来到我的个人技术博客！</p>
+        <div class="article-info info-on-right">
+          
+          
 
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/25/test1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
+    </div></section>
+  
+
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/21/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2017/09/21/hello-world/" class="archive-article-date">
-  	<time datetime="2017-09-21T02:19:33.854Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/21/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-  
 
 
           </div>
@@ -480,9 +221,9 @@ ref : 标识某个标签
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
+		isHome: false,
 		isPost: false,
-		isArchive: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
